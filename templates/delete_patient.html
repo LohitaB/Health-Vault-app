@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Patient</title>
+</head>
+<body>
+    <h2>Confirm Delete Patient</h2>
+    <p>Are you sure you want to delete the following patient?</p>
+
+    <ul>
+        <li><strong>Name:</strong> {{ patient.name }}</li>
+        <li><strong>Age:</strong> {{ patient.age }}</li>
+        <li><strong>Gender:</strong> {{ patient.gender }}</li>
+        <li><strong>Contact:</strong> {{ patient.contact }}</li>
+        <li><strong>Medical History:</strong> {{ patient.medical_history }}</li>
+    </ul>
+
+    <form method="POST">
+        <button type="submit">Yes, Delete</button>
+        <a href="{{ url_for('view_patients') }}">Cancel</a>
+    </form>
+</body>
+</html>

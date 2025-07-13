@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Your Health Reports - Health Vault{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Your Health Reports</h2>
+
+    {% if reports %}
+        <ul class="list-group mt-3">
+            {% for report in reports %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong>{{ report.title }}</strong> - Uploaded on {{ report.date.strftime('%d %B %Y') }}
+                    </div>
+                    <div>
+                        <a class="btn btn-outline-primary btn-sm" href="{{ url_for('static', filename='reports/' + report.filename) }}" target="_blank">View Report</a>
+                        <!-- Delete Button -->
+                        <form action="{{ url_for('delete_report', report_id=report.id) }}" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-outline-danger btn-sm ml-2">Delete</button>
+                        </form>
+                    </div>
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="alert alert-info mt-3" role="alert">
+            No reports uploaded yet.
+        </div>
+    {% endif %}
+    
+    <div class="mt-4">
+        <a class="btn btn-secondary btn-sm" href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+    </div>
+</div>
+{% endblock %}
+
+
+

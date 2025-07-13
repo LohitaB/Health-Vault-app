@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Profile - Health Vault{% endblock %}
+
+{% block content %}
+<h2>Edit Your Profile</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    <!-- Existing Fields for Username, Email, Phone -->
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" value="{{ user.username }}" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" value="{{ user.email }}" required>
+
+    <label for="phone">Phone</label>
+    <input type="text" id="phone" name="phone" value="{{ user.phone }}">
+
+    <!-- Profile Picture Upload -->
+    <label for="profile_pic">Profile Picture</label>
+    <input type="file" id="profile_pic" name="profile_pic">
+
+    <button type="submit">Update Profile</button>
+</form>
+
+<h3>Profile Preview</h3>
+
+{% if user.profile_pic %}
+    <img src="{{ url_for('static', filename='uploads/' + user.profile_pic) }}" alt="Profile Picture" width="100">
+{% else %}
+    <img src="{{ url_for('static', filename='uploads/default.jpg') }}" alt="Default Profile Picture" width="100">
+{% endif %}
+
+{% endblock %}
+
+

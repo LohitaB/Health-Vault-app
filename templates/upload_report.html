@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Health Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h2>Upload Health Report</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="title">Report Title:</label><br>
+        <input type="text" name="title" required><br><br>
+
+        <label for="report_file">Select Report (PDF/Image):</label><br>
+        <input type="file" name="report_file" accept=".pdf,.png,.jpg,.jpeg" required><br><br>
+
+        <button type="submit">Upload</button>
+    </form>
+    <br>
+    <a href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+</body>
+</html>

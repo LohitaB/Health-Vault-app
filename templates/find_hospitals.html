@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Nearby Hospitals</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nearby Hospitals</h1>
+    <div id="map"></div>
+
+    <script>
+        var map;
+        var service;
+        var infowindow;
+
+        function initMap() {
+            var location = { lat: 40.7128, lng: -74.0060 }; // Example: New York City
+
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: location,
+                zoom: 13
+            });
+
+            service = new google.maps.places.PlacesService(map);
+            infowindow = new google.maps.InfoWindow();
+
+            service.nearbySearch({
+                location: location,
+                radius: 5000,
+                type: ['hospital']
+            }, callback);
+        }
+
+        function callback(results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                for (var i = 0; i < results.length; i++) {
+                    var place = results[i];
+                    var marker = new google.maps.Marker({
+                        position: place.geometry.location,
+                        map: map
+                    });
+
+                    google.maps.event.addListener(marker, 'click', function () {
+                        infowindow.setContent(place.name);
+                        infowindow.open(map, this);
+                    });
+                }
+            }
+        }
+    </script>
+    <!-- Replace 'YOUR_API_KEY' with your actual Google Maps API key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
+

@@ -1,0 +1,27 @@
+<!-- templates/schedule_appointment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Appointment</title>
+</head>
+<body>
+    <h1>Schedule an Appointment</h1>
+
+    <form method="POST">
+        <label for="date">Date and Time:</label>
+        <input type="datetime-local" name="date" required><br>
+
+        <label for="doctor_name">Doctor's Name:</label>
+        <input type="text" name="doctor_name" required><br>
+
+        <label for="specialty">Specialty:</label>
+        <input type="text" name="specialty" required><br>
+
+        <button type="submit">Schedule Appointment</button>
+    </form>
+
+    <a href="{{ url_for('appointments') }}">Back to Appointments</a>
+</body>
+</html>

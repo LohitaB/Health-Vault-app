@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}View Patients - Health Vault{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 900px; margin: auto; padding: 20px;">
+    <h2 style="text-align: center; margin-bottom: 20px;">All Patients</h2>
+    
+    <div style="overflow-x: auto;">
+        <table class="patient-table" style="width: 100%; border-collapse: collapse; color: black; background-color: white;">
+            <thead>
+                <tr style="background-color: #f2f2f2;">
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Contact</th>
+                    <th>History</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for patient in patients %}
+                <tr>
+                    <td>{{ patient.name }}</td>
+                    <td>{{ patient.age }}</td>
+                    <td>{{ patient.gender }}</td>
+                    <td>{{ patient.contact }}</td>
+                    <td>{{ patient.medical_history }}</td>
+                    <td>
+                        <form method="POST" action="{{ url_for('delete_patient', id=patient.id) }}">
+                            <button type="submit" style="background-color: red; color: white; border: none; padding: 5px 10px; cursor: pointer;">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+

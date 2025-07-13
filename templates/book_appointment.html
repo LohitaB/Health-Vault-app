@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h2>Book an Appointment</h2>
+
+    <form method="POST">
+        <label for="doctor_name">Doctor's Name:</label><br>
+        <input type="text" name="doctor_name" required><br><br>
+
+        <label for="specialization">Specialization:</label><br>
+        <input type="text" name="specialization" required><br><br>
+
+        <label for="date">Appointment Date:</label><br>
+        <input type="date" name="date" required><br><br>
+
+        <label for="time">Appointment Time:</label><br>
+        <input type="time" name="time" required><br><br>
+
+        <button type="submit">Book Appointment</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+</body>
+</html>
+

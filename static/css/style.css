@@ -1,0 +1,315 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background: rgba(10, 66, 117, 0.85);  /* Blue background */
+    color: white;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Navigation links in the header */
+nav {
+    margin-top: 10px; /* To space the links below the title */
+}
+
+nav a {
+    margin: 0 15px;
+    color: white;  /* White color for the links */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Section */
+main {
+    padding: 60px 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    margin-top: 80px; /* Ensures content is below the header */
+    width: 70%;
+    border-radius: 15px;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Form Box Styles */
+.form-box {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    padding: 30px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.form-box button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #0a4275;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.form-box button:hover {
+    background: #063054;
+}
+
+/* Flash Messages */
+.flash-messages {
+    list-style: none;
+    padding: 10px;
+    margin: 10px auto;
+    width: fit-content;
+    background-color: #ffdddd;
+    color: #a94442;
+    border: 1px solid #a94442;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Dashboard Styles */
+.dashboard {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.dashboard-container {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+/* Change the title color to black */
+h2 {
+    color: black;
+}
+
+/* Change label text color to black */
+label {
+    color: black;
+}
+
+/* Logout Button */
+.logout-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff4b5c;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    background-color: #ff1c38;
+}
+
+/* Profile Card */
+.profile-card {
+    background-color: rgba(0, 0, 0, 0.6); /* Dark transparent background */
+    border-radius: 12px;
+    padding: 20px;
+    margin: 30px auto;
+    width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    color: #fff; /* White text */
+}
+
+.profile-card h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #ffd700; /* Golden color for heading */
+}
+
+/* Links */
+.links {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.links a {
+    color: #0a4275;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    margin: 5px 0;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Login Container */
+.login-container {
+    background-color: #ffffff;
+    padding: 40px;
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.login-container button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #218838;
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #007bff;
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.form-container button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.form-container button:hover {
+    background-color: #2980b9;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+.patient-table {
+    color: black;
+    background-color: white;
+}
+
+.patient-table th, .patient-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+
